@@ -1,0 +1,25 @@
+# Node.js dependencies
+node_modules/
+# Build output
+build/
+dist/
+# Logs
+logs/
+# Temporary files
+tmp/
+# Environment variables
+.env
+.vscode
+.DS_Store
+dist/
+coverage/
+*.log
+*.env
+*.tmp
+*.bak
+*.swp
+*.swo
+*.zip
+*.tar.gz
+*.rar
+*.7z
