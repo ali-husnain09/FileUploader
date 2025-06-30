@@ -1,7 +1,7 @@
 const cloudinary = require('cloudinary').v2;
 require('dotenv').config();
 
-exports.cloudinaryConnect = () => {
+const cloudinaryConnect = () => {
     try {
         cloudinary.config({
             cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -16,3 +16,5 @@ exports.cloudinaryConnect = () => {
 };
 
 
+// Export the cloudinary instance for use in other files
+module.exports = { cloudinary, cloudinaryConnect };

@@ -8,7 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(fileupload());
+app.use(fileupload({
+  useTempFiles: true,
+  tempFileDir: "/tmp/"
+}));
 // Load environment variables and connect to the database
 require("dotenv").config();
 
@@ -16,7 +19,8 @@ require("dotenv").config();
 require("./src/config/database").connect();
 
 // Load Cloudinary configuration
-require("./src/config/cloudinary").cloudinaryConnect();
+const {cloudinary,cloudinaryConnect} = require("./src/config/cloudinary");
+cloudinaryConnect();
 const upload = require("./src/routes/fileUpload");
 
 // Route configuration
